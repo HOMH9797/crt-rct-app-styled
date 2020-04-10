@@ -2,11 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './componentes/App';
 import * as serviceWorker from './serviceWorker';
+import { createGlobalStyle } from 'styled-components'
+
+const EstiloGlobal = createGlobalStyle`
+body{
+    margin:0;
+  }
+`
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
-  </React.StrictMode>,
+    <EstiloGlobal />
+  </React.Fragment>,
   document.getElementById('root')
 );
 
