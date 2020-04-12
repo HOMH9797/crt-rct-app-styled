@@ -9,6 +9,7 @@ const Contenedor = styled.div`
         padding-left:0;
         overflow:scroll;
         display:flex;
+        margin:0;
         align-items:strech;
     }
 `
