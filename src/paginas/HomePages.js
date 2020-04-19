@@ -2,14 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Estreno from '../componentes/Estreno'
 import Destaque from '../componentes/Destaque'
-import styled from 'styled-components'
+import Titulo from '../componentes/TituloSeccion'
 
-const Titulo = styled.h1`
-    background: rgba(120, 144, 156, 1);
-    color: white;
-    margin:0;
-    padding:12px;
-`
 
 class HomePage extends React.Component {
 

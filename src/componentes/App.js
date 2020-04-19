@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import HomePage from '../paginas/HomePages'
 import PeliculaDetalle from '../paginas/PeliculaDetalle'
 import Header from '../componentes/Header'
@@ -11,7 +11,7 @@ function App() {
       <div>
         <Header></Header>
         <Route exact path="/" component={HomePage}></Route>
-        <Route path="/Detalle" component={PeliculaDetalle}></Route>
+        <Route path="/detalles/:peliculaid" component={PeliculaDetalle}></Route>
         <Footer></Footer>
       </div>
     </BrowserRouter>

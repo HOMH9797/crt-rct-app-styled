@@ -34,15 +34,27 @@ const VotoPromedio = styled.span`
 color:rgba(100, 221, 23, 1);
 font-family:"Cinzel",serif;
 `
+const Cargando = styled.div`
+    text-align:center;
+    font-size:22px;
+`
 
-export default ({ pelicula }) => (
-    <Inicio pelicula={pelicula}>
-        <PeliculaInfo>
-            <PeliculaInfoContent>
-                <PeliculaInfoTitulo>{pelicula.title}</PeliculaInfoTitulo>
-                <PeliculaInfoOverview>{pelicula.overview}</PeliculaInfoOverview>
-                <VotoPromedio>{pelicula.vote_average}/10 de {pelicula.vote_count} votos</VotoPromedio>
-            </PeliculaInfoContent>
-        </PeliculaInfo>
-    </Inicio>
-)
+export default ({ pelicula }) => {
+    if (pelicula) {
+        return (
+            <Inicio pelicula={pelicula}>
+                <PeliculaInfo>
+                    <PeliculaInfoContent>
+                        <PeliculaInfoTitulo>{pelicula.title}</PeliculaInfoTitulo>
+                        <PeliculaInfoOverview>{pelicula.overview}</PeliculaInfoOverview>
+                        <VotoPromedio>{pelicula.vote_average}/10 de {pelicula.vote_count} votos</VotoPromedio>
+                    </PeliculaInfoContent>
+                </PeliculaInfo>
+            </Inicio>
+        )
+    } else {
+        return (
+            <Cargando>Cargando...</Cargando>
+        )
+    }
+}
