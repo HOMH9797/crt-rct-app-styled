@@ -3,7 +3,7 @@ import axios from 'axios'
 import Estreno from '../componentes/Estreno'
 import Destaque from '../componentes/Destaque'
 import Titulo from '../componentes/TituloSeccion'
-
+import { connect } from 'react-redux'
 
 class HomePage extends React.Component {
 
@@ -16,6 +16,7 @@ class HomePage extends React.Component {
     componentDidMount() {
         this.getData()
         this.getEstrenos_proximo()
+        console.log(this.props.test.test)
     }
 
     getEstrenos_proximo = async () => {
@@ -61,4 +62,10 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage
+function mapStateToProps(store) {
+    return {
+        test: store.test
+    }
+}
+
+export default connect(mapStateToProps)(HomePage);
